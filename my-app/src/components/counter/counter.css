@@ -1,0 +1,13 @@
+.slider-counter{
+    display: block;
+    font-family:Arial, Helvetica, serif;
+    color: white;
+    border: darkslategrey solid 1px;
+    border-radius: 10px;
+    width: fit-content;
+    background: darkslategrey;
+    position: absolute;
+    opacity: 0.6;
+    right: 0;
+    z-index: 1;
+  }

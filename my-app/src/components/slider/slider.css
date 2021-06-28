@@ -1,0 +1,88 @@
+.slide-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+
+.slide-wrapper-inner {
+display: flex;
+/*transition: 0.5s all ease 0s;*/
+}
+
+.slide{
+  flex: 0 0 100%;
+  max-width: 100%;
+  
+}
+
+@media screen and(min-width: 768px) {
+  .slide {
+    flex: 0 0 50%;
+    max-width: 50%;
+    }
+}
+
+@media screen and(min-width: 1200px) {
+  .slide {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+    
+  }
+}
+
+.item-container-img {
+      display: flex;
+      height: auto;
+      max-width: 100%;
+}
+
+
+.item-container-text{
+  color: dimgrey;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-shadow: 2px 2px 5px dimgrey;
+  font-size: 100%;
+  }
+
+.item-container-text:hover,
+.item-container-text:focus
+{
+ text-shadow: 2px 2px 5px red;
+    }  
+
+    
+
+.swipe-control
+{
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  height: 82%;
+ 
+  }
+
+.swipe-control[data-slide='prev']
+{
+    position: absolute;
+    left: 0;
+    padding-top:25%;
+    opacity: 0.6;
+    z-index: 99;             
+  }
+.swipe-control[data-slide='next']
+{
+    position: absolute;
+    right: 0;
+    padding-top:25%;
+    opacity: 0.6;  
+    z-index: 99;           
+  }
+
+
+.swipe-control:hover,
+.swipe-control:focus
+{
+background: rgba(0, 0, 0, 0.1);
+}

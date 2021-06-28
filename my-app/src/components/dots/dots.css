@@ -1,0 +1,52 @@
+.dots-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 10em;
+    bottom: -5px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*margin-top: 15px;*/
+    
+       
+}
+
+.dots-wrapper li {
+    width: 10px;
+    height: 10px;
+    border: gray solid 1px;
+    border-radius: 10px;
+    background-color:blanchedalmond;   
+    }
+
+.dot:hover {
+    background-color: skyblue;
+    box-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+}
+
+.dot.active
+{opacity: 1;
+}
+
+@media screen and(min-width: 768px){
+  .dots-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 7em;
+        
+}
+}
+
+
+@media screen and(min-width: 1200px){
+  .dots-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 12em;
+        
+}
+}
