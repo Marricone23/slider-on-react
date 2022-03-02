@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './slider.css';
+
 import mountin from '../slider/mountin.jpg' ;
 import lion from './lion.jpg';
 import ozero from './ozero-les.jpg';
@@ -7,13 +7,13 @@ import watersky from './water-sky.jpg';
 import leftarrow from './leftarrow.png';
 import rightarrow from './rightarrow.png';
 
+import './slider.css';
+
 export default class Slider extends Component {
 
 render () {
-     
-     const {slideIndex,onLeftarrow,onRightarrow,onTouchStart, onTouchEnd,onTouchMove} = this.props;
-       return (
-            
+       const {slideIndex,onLeftarrow,onRightarrow,onTouchStart, onTouchEnd,onTouchMove} = this.props;
+       return (            
         <div  className= "slide-wrapper">
             <div className = "slide-wrapper-inner" 
             onTouchStart={(e) => onTouchStart(e)} 
@@ -75,11 +75,8 @@ render () {
             </a>
             </div>  
             </div>
-            </div>    
-      
-      
-      )
-        
+            </div>       
+         )        
      }
   }
   
