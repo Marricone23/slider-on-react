@@ -20,11 +20,11 @@ export default class App extends Component {
     x1:0,
     y1:0,
     dots: [{index:0},{index:1},{index:2},{index:3}],
-   index: 0,
-     opacity: '0.5',
-     current: 1,
-     currentDot: [  {id:1,current:1},  {id:2,current:2}, {id:3,current:3},{id:4,current:4}],
-     slides: [ {id:1,src: mountin} , {id:2, src:lion}, {id:3,src:ozero}, {id:4,src:watersky}] ,
+    index: 0,
+    opacity: '0.5',
+    current: 1,
+    currentDot: [  {id:1,current:1},  {id:2,current:2}, {id:3,current:3},{id:4,current:4}],
+    slides: [ {id:1,src: mountin} , {id:2, src:lion}, {id:3,src:ozero}, {id:4,src:watersky}] ,
     }; 
 this.onLeftarrow = this.onLeftarrow.bind(this);
 this.onRightarrow = this.onRightarrow.bind(this);
@@ -32,16 +32,14 @@ this.onDots = this.onDots.bind(this);
 this.onTouchStart = this.onTouchStart.bind(this);
 this.onTouchMove = this.onTouchMove.bind(this);
 this.onTouchEnd = this.onTouchEnd.bind(this);
-  }
+}
 
-  onLeftarrow(){
+onLeftarrow(){
   const {
     slideIndex,
     slides,
     current,
       } = this.state;
- //this.setState(state => ({opacity: state.opacity-1})   );
- //условие? значение1(true) : значение2(false)
  let total =  slideIndex ? current-1  : slides.length ;
  let prevImgIndex = slideIndex ? slideIndex - 1 : slides.length - 1;
     this.setState ({
@@ -56,7 +54,7 @@ onRightarrow(){
       slideIndex,
       slides,
       current,
-        } = this.state;
+      } = this.state;
     //this.setState(state => ({current: state.current+1}));
     let total =current < slides.length ? current+1 : 1; 
     let nextSlideIndex =  slideIndex === slides.length - 1 ? 0 : slideIndex + 1 ; 
@@ -70,7 +68,7 @@ onDots(id){
   const {
     slides,
     opacity,
-            } = this.state;
+   } = this.state;
    let total = slides.length ? id +1 : 1;
    let addOpacity = id == opacity ;
    this.setState({    
@@ -85,7 +83,6 @@ onTouchStart(e) {
   this.state.x1 = e.nativeEvent.touches[0].clientX;
   this.state.y1 = e.nativeEvent.touches[0].clientY;
   console.log('onTouchStart', e.nativeEvent);
-
 }
   
  
@@ -94,27 +91,20 @@ onTouchMove(e) {
       let x2 = e.nativeEvent.touches[0].clientX;
       const xDiff = x2 - this.state.x1;
       const absXDiff = Math.abs(xDiff);
-      
-       if(absXDiff<=5){
-         
+      if (absXDiff<=5) {         
          this.onRightarrow(x2);
          console.log('right');
-       }else{
-          
+       } else {          
           this.onLeftarrow(x2);
           console.log('left');
-        }
-
-       
-      console.log('onTouchMove', e.nativeEvent.touches[0].clientX);   
-    
+       }       
+      console.log('onTouchMove', e.nativeEvent.touches[0].clientX);       
 }
 
 onTouchEnd(e) {
-  this.state.x1 = 0;
+ this.state.x1 = 0;
  console.log('onTouchEnd', e.nativeEvent);
 }
-
 
 render (){   
     const {slideIndex,current, slides,index,opacity} = this.state;
@@ -128,17 +118,15 @@ render (){
         onRightarrow = {this.onRightarrow}
         onTouchStart = {this.onTouchStart}
         onTouchMove={this.onTouchMove} 
-        onTouchEnd={this.onTouchEnd}
-        
+        onTouchEnd={this.onTouchEnd}        
        >          
         </Slider>             
-        < Dots onDots ={this.onDots} 
+        <Dots onDots ={this.onDots} 
         slideIndex = {slideIndex}
         slides = {slides.length} 
         index={index}
         opacity={opacity}
-           />
-                        
+        />                        
       </div>    
       </div>
       )
